@@ -1,10 +1,10 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>Gym Locator</ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding>
-    <ion-item class="slide" *ngFor="let gym of results">
+    <ion-item color="secondary" class="slide" *ngFor="let gym of results">
       <h1 class="gym-name">{{gym.name}}</h1>
       <h2>Address: {{gym.vicinity}}</h2>
       <h2>Rating: {{gym.rating}}</h2>
@@ -12,6 +12,6 @@
 </ion-content>
 <ion-footer no-shadow>
 	<ion-toolbar position="bottom">
-    <button ion-button block color="default" (click)="findGym()" type="submit" class="submit-btn">Find Open Gyms Near You!</button>
+    <button ion-button block color="primary" (click)="findGym()" type="submit" class="submit-btn">Find Open Gyms Near You!</button>
   </ion-toolbar>
 </ion-footer>

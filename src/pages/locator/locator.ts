@@ -17,7 +17,6 @@ export class LocatorPage {
   }
   
   coords: string
-  distance: number
 
   ionViewDidLoad() {
     /* Grab user coordinates when page loads */
@@ -33,9 +32,6 @@ export class LocatorPage {
   async findGym() {
 
     /* Proxy Google Places API Request through Heroku app */
-    
-    /*let placesNearbyURL = "https://tranquil-cove-24264.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=AIzaSyBieq2tBlEH0WLHElHwZKDuOo0RtylBDys&type=gym&radius=" + (this.distance * 1609.34) + "&opennow=true" + "&location=" + this.coords;
-    */
     let placesNearbyURL = "https://tranquil-cove-24264.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=AIzaSyCKphNg8Qmd3wn6aedPmr-yeRvSOBhAVJ8&type=gym&radius=10000&opennow=true&&sensor=false&location=" + this.coords;
     console.log(placesNearbyURL)
 
@@ -50,13 +46,15 @@ export class LocatorPage {
      return;
    }
 
+   /* Pushes results to same page */
    this.navCtrl.push(LocatorPage, {results:results});
   };
 
+/*Alerts if no gyms are open nearby */
   showAlert() {
     const alert = this.alertCtrl.create({
       title: 'No Results Found!',
-      subTitle: 'Try adjusting your parameters.',
+      subTitle: 'Please try again later.',
       buttons: ['OK']
     });
     alert.present();
