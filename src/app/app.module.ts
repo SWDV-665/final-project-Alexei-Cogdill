@@ -7,7 +7,6 @@ import { AboutPage } from '../pages/about/about';
 import { LocatorPage } from '../pages/locator/locator';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-import { CalendarPage} from '../pages/calendar/calendar';
 import { ModalContentPage } from '../pages/home/home';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -21,7 +20,6 @@ import { Geolocation } from '@ionic-native/geolocation';
     LocatorPage,
     HomePage,
     TabsPage,
-    CalendarPage,
     ModalContentPage
   ],
   imports: [
@@ -35,7 +33,6 @@ import { Geolocation } from '@ionic-native/geolocation';
     LocatorPage,
     HomePage,
     TabsPage,
-    CalendarPage,
     ModalContentPage
   ],
   providers: [
